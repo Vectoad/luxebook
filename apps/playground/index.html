@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>LuxeBook Playground</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <header>
+      <span class="brand">LuxeBook</span>
+      <span class="doc-title" id="doc-title"></span>
+      <button id="panel-toggle" aria-controls="panel" aria-expanded="true">Settings</button>
+    </header>
+    <div class="workspace">
+      <main id="stage" aria-label="Book"></main>
+      <aside id="panel" aria-label="Book settings">
+        <section>
+          <h2>Book content</h2>
+          <label class="button block">Upload PDF<input id="pdf-file" type="file" accept="application/pdf" hidden /></label>
+          <p class="hint">Or drop a PDF on the book.</p>
+        </section>
+
+        <section>
+          <h2>Look</h2>
+          <div class="presets" id="presets" role="group" aria-label="Presets"></div>
+          <label class="row" for="lighting">Lighting
+            <select id="lighting">
+              <option value="neutral">Neutral (true colour)</option>
+              <option value="warm">Warm</option>
+              <option value="cool">Cool</option>
+              <option value="dramatic">Dramatic</option>
+            </select>
+          </label>
+          <label class="row" for="paper">Paper
+            <select id="paper">
+              <option value="matte">Matte (uncoated)</option>
+              <option value="silk">Silk (satin sheen)</option>
+              <option value="glossy">Glossy (magazine)</option>
+            </select>
+          </label>
+          <label class="row" for="layout">Pages
+            <select id="layout">
+              <option value="auto">Auto (one page on portrait screens)</option>
+              <option value="double">Two-page spread</option>
+              <option value="single">One page (mobile)</option>
+            </select>
+          </label>
+        </section>
+
+        <section>
+          <h2>Cover</h2>
+          <div class="segmented" role="radiogroup" aria-label="Cover">
+            <label><input type="radio" name="cover" value="first-page" checked />First page</label>
+            <label><input type="radio" name="cover" value="plain" />Plain</label>
+            <label><input type="radio" name="cover" value="image" />Image</label>
+          </div>
+          <label class="row" for="coverStyle">Cover style
+            <select id="coverStyle">
+              <option value="soft">Soft (folds like a page)</option>
+              <option value="hard">Hard (stiff board)</option>
+            </select>
+          </label>
+          <label class="button block">Upload cover image<input id="cover-file" type="file" accept="image/*" hidden /></label>
+          <label class="row">Cover colour <input id="coverColor" type="color" value="#24211e" /></label>
+          <label class="row" for="thickness">Thickness <output for="thickness"></output></label>
+          <input id="thickness" type="range" min="0.2" max="4" step="0.1" value="1" />
+          <label class="row" for="coverThickness">Cover thickness <output for="coverThickness"></output></label>
+          <input id="coverThickness" type="range" min="0.1" max="4" step="0.1" value="1" />
+          <label class="row" for="spineWidth">Spine width <output for="spineWidth"></output></label>
+          <input id="spineWidth" type="range" min="0" max="4" step="0.1" value="1" />
+          <label class="row check"><input id="startOpen" type="checkbox" /> Start open</label>
+        </section>
+
+        <section>
+          <h2>Background</h2>
+          <label class="row">Colour <input id="background" type="color" value="#141312" /></label>
+          <div class="row">
+            <label class="button">Image<input id="bg-file" type="file" accept="image/*" hidden /></label>
+            <button id="bg-clear" type="button" hidden>Remove image</button>
+          </div>
+          <label class="row" for="backgroundBrightness">Brightness <output for="backgroundBrightness"></output></label>
+          <input id="backgroundBrightness" type="range" min="0" max="2" step="0.05" value="1" />
+          <label class="row" for="backgroundBlur">Blur <output for="backgroundBlur"></output></label>
+          <input id="backgroundBlur" type="range" min="0" max="40" step="1" value="0" />
+          <label class="row" for="shadowStrength">Book shadow <output for="shadowStrength"></output></label>
+          <input id="shadowStrength" type="range" min="0" max="1" step="0.05" value="0.5" />
+        </section>
+
+        <section>
+          <h2>View</h2>
+          <label class="row" for="turnSpeed">Page turn speed <output for="turnSpeed"></output></label>
+          <input id="turnSpeed" type="range" min="0.25" max="3" step="0.05" value="1" />
+          <label class="row" for="zoom">Zoom <output for="zoom"></output></label>
+          <input id="zoom" type="range" min="0.6" max="2.4" step="0.05" value="1" />
+          <label class="row" for="rotateX">Rotate X <output for="rotateX"></output></label>
+          <input id="rotateX" type="range" min="-60" max="60" step="1" value="0" />
+          <label class="row" for="rotateY">Rotate Y <output for="rotateY"></output></label>
+          <input id="rotateY" type="range" min="-60" max="60" step="1" value="0" />
+          <label class="row" for="offsetX">Position X <output for="offsetX"></output></label>
+          <input id="offsetX" type="range" min="-1" max="1" step="0.01" value="0" />
+          <label class="row" for="offsetY">Position Y <output for="offsetY"></output></label>
+          <input id="offsetY" type="range" min="-1" max="1" step="0.01" value="0" />
+          <p class="hint">This is the look while the book is open.</p>
+        </section>
+
+        <section>
+          <h2>Showcase (closed look)</h2>
+          <label class="row check"><input id="showcase" type="checkbox" /> Different look while closed</label>
+          <p class="hint">The book waits in this pose, then glides to the open look when clicked, and back when closed.</p>
+          <fieldset id="closed-look" class="plain" disabled>
+            <label class="row" for="closed-rotateX">Rotate X <output for="closed-rotateX"></output></label>
+            <input id="closed-rotateX" type="range" min="-60" max="60" step="1" value="0" />
+            <label class="row" for="closed-rotateY">Rotate Y <output for="closed-rotateY"></output></label>
+            <input id="closed-rotateY" type="range" min="-60" max="60" step="1" value="0" />
+            <label class="row" for="closed-zoom">Zoom <output for="closed-zoom"></output></label>
+            <input id="closed-zoom" type="range" min="0.6" max="2.4" step="0.05" value="1" />
+            <label class="row" for="closed-offsetX">Position X <output for="closed-offsetX"></output></label>
+            <input id="closed-offsetX" type="range" min="-1" max="1" step="0.01" value="0" />
+            <label class="row" for="closed-offsetY">Position Y <output for="closed-offsetY"></output></label>
+            <input id="closed-offsetY" type="range" min="-1" max="1" step="0.01" value="0" />
+          </fieldset>
+          <div class="row">
+            <button id="open-book" type="button">Open book</button>
+            <button id="close-book" type="button">Close book</button>
+          </div>
+          <button id="reset" type="button" class="block">Reset all</button>
+        </section>
+
+        <section>
+          <h2>Config <button id="copy" type="button" class="small">Copy</button></h2>
+          <pre id="config"></pre>
+          <p class="hint">Pass as <code>options</code> to <code>&lt;LuxeBook&gt;</code> or <code>new LuxeBookViewer()</code>. Uploaded files appear as <code>"blob:…"</code>: replace them with your own URLs.</p>
+        </section>
+      </aside>
+    </div>
+    <p id="message" role="status" hidden></p>
+    <footer>
+      <button id="prev" aria-label="Previous page">‹</button>
+      <span id="page-label">–</span>
+      <button id="next" aria-label="Next page">›</button>
+      <span id="click-info" class="click-info" aria-live="polite"></span>
+    </footer>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "@vectoad/luxebook-playground",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@vectoad/luxebook-core": "workspace:*",
+    "pdfjs-dist": "6.4.299"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "@vectoad/luxebook-renderer-three",
+  "version": "0.1.0",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "luxebook-source": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts --clean --sourcemap --tsconfig ../../tsconfig.base.json"
+  },
+  "dependencies": {
+    "@vectoad/luxebook-page-physics": "workspace:*",
+    "three": "0.186.1"
+  },
+  "devDependencies": {
+    "@types/three": "0.186.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Vectoad/lux-book.git",
+    "directory": "packages/renderer-three"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  }
+}

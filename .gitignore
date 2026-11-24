@@ -1,0 +1,10 @@
+node_modules
+dist
+.next
+test-results
+playwright-report
+*.tsbuildinfo
+.DS_Store
+examples/nextjs-pages-router/public/pdf.worker.min.mjs
+examples/nextjs-pages-router/public/*.pdf
+examples/nextjs-pages-router/public/pdfjs/

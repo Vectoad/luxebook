@@ -1,0 +1,29 @@
+{
+  "name": "@vectoad/luxebook-animations",
+  "version": "0.1.0",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "luxebook-source": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts --clean --sourcemap --tsconfig ../../tsconfig.base.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Vectoad/lux-book.git",
+    "directory": "packages/animations"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  }
+}
