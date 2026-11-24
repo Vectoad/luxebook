@@ -1,6 +1,6 @@
 {
   "name": "@vectoad/luxebook-core",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Turn any PDF into a realistic 3D flipbook. Framework-free viewer with page-turn physics, covers, lighting and paper finishes.",
   "keywords": [
     "pdf",
@@ -35,7 +35,8 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsup src/index.ts --format esm --dts --clean --sourcemap --tsconfig ../../tsconfig.base.json"
+    "build": "tsup src/index.ts --format esm --dts --clean --sourcemap --tsconfig ../../tsconfig.base.json",
+    "prepack": "cp ../../README.md README.md"
   },
   "dependencies": {
     "@vectoad/luxebook-animations": "workspace:*",
