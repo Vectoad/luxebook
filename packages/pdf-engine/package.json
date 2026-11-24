@@ -27,10 +27,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Vectoad/lux-book.git",
+    "url": "https://github.com/Vectoad/luxebook.git",
     "directory": "packages/pdf-engine"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
   }
 }
