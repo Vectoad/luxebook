@@ -1,6 +1,10 @@
 {
   "name": "@vectoad/luxebook-animations",
-  "version": "0.1.1",
+  "version": "0.1.2",
+  "description": "Internal building block of Luxebook, the 3D PDF flipbook. Use @vectoad/luxebook-react or @vectoad/luxebook-core.",
+  "homepage": "https://vectoad.github.io/luxebook/",
+  "bugs": "https://github.com/Vectoad/luxebook/issues",
+  "author": "Vectoad",
   "license": "MIT",
   "type": "module",
   "sideEffects": false,

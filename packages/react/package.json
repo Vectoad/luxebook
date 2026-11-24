@@ -1,6 +1,27 @@
 {
   "name": "@vectoad/luxebook-react",
-  "version": "0.1.1",
+  "version": "0.1.2",
+  "description": "Turn any PDF into a realistic 3D flipbook. React component with page-turn physics, covers, lighting and paper finishes.",
+  "keywords": [
+    "pdf",
+    "pdf-viewer",
+    "flipbook",
+    "page-flip",
+    "page-turn",
+    "3d",
+    "book",
+    "brochure",
+    "magazine",
+    "catalog",
+    "threejs",
+    "webgl",
+    "pdfjs",
+    "react",
+    "react-component"
+  ],
+  "homepage": "https://vectoad.github.io/luxebook/",
+  "bugs": "https://github.com/Vectoad/luxebook/issues",
+  "author": "Vectoad",
   "license": "MIT",
   "type": "module",
   "sideEffects": false,
@@ -19,14 +40,14 @@
     "build": "tsup src/index.tsx --format esm --dts --clean --sourcemap --external react --external react-dom --tsconfig ../../tsconfig.base.json"
   },
   "dependencies": {
-    "@vectoad/luxebook-types": "workspace:*",
-    "@vectoad/luxebook-core": "workspace:*"
+    "@vectoad/luxebook-core": "workspace:*",
+    "@vectoad/luxebook-types": "workspace:*"
   },
   "devDependencies": {
-    "react": "18.3.1",
     "@types/react": "18.3.31",
-    "react-dom": "18.3.1",
-    "@types/react-dom": "18.3.7"
+    "@types/react-dom": "18.3.7",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
   },
   "peerDependencies": {
     "react": "^18.2.0",

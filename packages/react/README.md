@@ -1,6 +1,14 @@
 # @vectoad/luxebook-react
 
-A 3D page-flip PDF viewer for React. Give it a PDF and it renders a realistic book: cover, thickness, paper, lighting, and page turns.
+**Turn any PDF into a realistic 3D book, in one React component.**
+
+[![npm](https://img.shields.io/npm/v/@vectoad/luxebook-react?color=c9a86a&style=flat-square)](https://www.npmjs.com/package/@vectoad/luxebook-react) [![license](https://img.shields.io/badge/license-MIT-c9a86a?style=flat-square)](https://github.com/Vectoad/luxebook/blob/main/LICENSE)
+
+**[✨ Live demo](https://vectoad.github.io/luxebook/)** · **[GitHub](https://github.com/Vectoad/luxebook)**
+
+[![Luxebook demo: a PDF brochure opening as a 3D book with turning pages](https://raw.githubusercontent.com/Vectoad/luxebook/main/.github/assets/demo.gif)](https://vectoad.github.io/luxebook/)
+
+Hard or soft covers, paper thickness, matte/silk/glossy pages, four lighting moods, drag-to-turn corners, reading zoom, mobile single-page layout, and your own content on any page. Free, MIT, no watermark.
 
 ```sh
 npm install @vectoad/luxebook-react

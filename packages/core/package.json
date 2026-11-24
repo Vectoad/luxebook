@@ -1,6 +1,25 @@
 {
   "name": "@vectoad/luxebook-core",
-  "version": "0.1.1",
+  "version": "0.1.2",
+  "description": "Turn any PDF into a realistic 3D flipbook. Framework-free viewer with page-turn physics, covers, lighting and paper finishes.",
+  "keywords": [
+    "pdf",
+    "pdf-viewer",
+    "flipbook",
+    "page-flip",
+    "page-turn",
+    "3d",
+    "book",
+    "brochure",
+    "magazine",
+    "catalog",
+    "threejs",
+    "webgl",
+    "pdfjs"
+  ],
+  "homepage": "https://vectoad.github.io/luxebook/",
+  "bugs": "https://github.com/Vectoad/luxebook/issues",
+  "author": "Vectoad",
   "license": "MIT",
   "type": "module",
   "sideEffects": false,
@@ -19,11 +38,11 @@
     "build": "tsup src/index.ts --format esm --dts --clean --sourcemap --tsconfig ../../tsconfig.base.json"
   },
   "dependencies": {
-    "@vectoad/luxebook-types": "workspace:*",
+    "@vectoad/luxebook-animations": "workspace:*",
+    "@vectoad/luxebook-page-physics": "workspace:*",
     "@vectoad/luxebook-pdf-engine": "workspace:*",
     "@vectoad/luxebook-renderer-three": "workspace:*",
-    "@vectoad/luxebook-page-physics": "workspace:*",
-    "@vectoad/luxebook-animations": "workspace:*"
+    "@vectoad/luxebook-types": "workspace:*"
   },
   "repository": {
     "type": "git",
